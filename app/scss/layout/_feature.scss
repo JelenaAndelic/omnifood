@@ -1,0 +1,54 @@
+@use "../globals" as g;
+@use "../util" as u;
+
+.feature {
+  text-align: center;
+
+  &__info {
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    @include u.breakpoint-up(medium) {
+      width: 90%;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 12.5%;
+      height: 3px;
+      background: g.$primaryOrange;
+      margin: 24px auto;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 35px;
+
+    @include u.breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include u.breakpoint-up(large) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: left;
+    }
+  }
+
+  &__icon {
+    color: g.$primaryOrange;
+    font-size: g.$icon-s;
+
+    @include u.breakpoint-up(large) {
+      font-size: g.$icon-l;
+      margin-bottom: 15px;
+    }
+  }
+}
