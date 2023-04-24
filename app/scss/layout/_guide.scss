@@ -1,0 +1,83 @@
+@use "../globals" as g;
+@use "../util" as u;
+
+.guide {
+  background: g.$grayColor-4;
+
+  &__title {
+    text-align: center;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 12.5%;
+      height: 3px;
+      background: g.$primaryOrange;
+      margin: 24px auto;
+    }
+  }
+
+  &__info {
+    text-align: center;
+
+    @include u.breakpoint-up(large) {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      text-align: left;
+    }
+  }
+
+  &__iPhone {
+    width: 55%;
+
+    @include u.breakpoint-up(medium) {
+      width: 30%;
+    }
+
+    @include u.breakpoint-up(large) {
+      width: 30%;
+    }
+  }
+
+  &__instruction {
+    margin-block: 30px;
+
+    @include u.breakpoint-up(large) {
+      width: 40%;
+      margin-block: 80px;
+    }
+  }
+
+  &__step {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 30px;
+    text-align: left;
+
+    @include u.breakpoint-up(large) {
+      gap: 20px;
+    }
+  }
+
+  &__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    aspect-ratio: 1;
+    border: 2px solid g.$primaryOrange;
+    border-radius: 50%;
+    font-size: g.$font-m;
+
+    @include u.breakpoint-up(large) {
+      height: 60px;
+      font-size: g.$font-l;
+    }
+  }
+
+  &__app {
+    height: 50px;
+  }
+}
