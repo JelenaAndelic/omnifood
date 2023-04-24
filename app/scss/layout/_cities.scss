@@ -1,0 +1,56 @@
+@use "../globals" as g;
+@use "../util" as u;
+
+.cities {
+  text-align: center;
+
+  &__title {
+
+    &::after {
+      content: "";
+      display: block;
+      width: 12.5%;
+      height: 3px;
+      background: g.$primaryOrange;
+      margin: 24px auto;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 30px;
+    text-align: left;
+
+    @include u.breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include u.breakpoint-up(large) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.city {
+  width: 100%;
+
+  & img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    & a {
+      color: g.$primaryOrange;
+      font-weight: 400;
+    }
+  }
+
+  &__icon {
+    color: g.$primaryOrange;
+  }
+}
