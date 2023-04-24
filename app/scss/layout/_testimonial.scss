@@ -1,0 +1,61 @@
+@use "../globals" as g;
+@use "../util" as u;
+
+.testimonials {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("/img/back-customers.jpg");
+  color: g.$white ;
+
+  &__title {
+    text-align: center;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 12.5%;
+      height: 3px;
+      background: g.$primaryOrange;
+      margin: 24px auto;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 45px;
+
+    @include u.breakpoint-up(large) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 65px;
+    }
+  }
+}
+
+.tesimonial {
+  font-style: italic;
+  line-height: 1.5;
+
+  & blockquote {
+    position: relative;
+    margin-top: 40px;
+
+    &::before {
+      content: "\201C";
+      display: block;
+      position: absolute;
+      top: -65px;
+      left: -5px;
+      font-size: 100px;
+    }
+  }
+
+  & cite {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  &__customer {
+    width: 50px;
+    border-radius: 50%;
+  }
+}

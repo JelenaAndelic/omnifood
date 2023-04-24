@@ -2,6 +2,7 @@ const hamburger = document.querySelector(".header__hamburger");
 const header = document.querySelector(".header");
 const body = document.querySelector("body");
 const navbar = document.querySelector(".header__navbar");
+const links = document.querySelectorAll(".links a");
 
 hamburger.addEventListener("click", () => {
   if (header.classList.contains("open")) {

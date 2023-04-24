@@ -94,6 +94,7 @@
         left: 0;
         background-color: hsla(0, 0%, 100%, 0.04);
         backdrop-filter: blur(0.2rem);
+        z-index: 1;
       }
     }
     & .header__hamburger {
@@ -146,6 +147,8 @@
   &__info {
     text-align: center;
     margin-top: 90px;
+    transform: translateY(50%);
+
 
     @include u.breakpoint-up(medium) {
       position: absolute;
