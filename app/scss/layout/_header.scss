@@ -1,0 +1,154 @@
+@use "../globals" as g;
+@use "../util" as u;
+
+.header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705)), url(/img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+
+  &__navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 20px;
+    align-items: center;
+  }
+  
+  &__logo {
+    display: block;
+    width: clamp(70px, 15vw, 120px);
+    height: clamp(70px, 15vw, 120px);
+  }
+
+  &__hamburger {
+    @include u.breakpoint-down(medium) {
+      display: block;
+      position: relative;
+      width: 25px;
+      height: 20px;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+
+      & span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: g.$primaryOrange;
+        border-radius: 2px;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+      }
+
+      & span:nth-child(1) {
+        top: 0;
+      }
+
+      & span:nth-child(2),
+      & span:nth-child(3) {
+        top: 8px;
+      }
+
+      & span:nth-child(4) {
+        top: 16px
+      };
+    }
+  }
+
+  &__menu {
+    display: none;
+  }
+
+  &__links {
+    & a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: g.$white;
+      margin-right: 20px;
+    }
+
+    & a:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &.open {
+    
+    & .overlay {
+      @include u.breakpoint-down(medium) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: hsla(0, 0%, 100%, 0.04);
+        backdrop-filter: blur(0.2rem);
+      }
+    }
+    & .header__hamburger {
+      @include u.breakpoint-down(medium) {
+        & span:nth-child(1) {
+          top: 8px;
+          width: 0%;
+          left: 50%;
+        }
+        
+        & span:nth-child(2) {
+          transform: rotate(45deg);
+        }
+      
+        & span:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+        
+        & span:nth-child(4) {
+          top: 8px;
+          width: 0%;
+          left: 50%;
+        }
+      }
+    }
+
+    & .header__menu {
+      @include u.breakpoint-down(medium) {
+        display: block;
+        position: absolute;
+        top: 110px;
+        right: 0;
+        left: 0;
+        background: white;
+        padding: 10px;
+        margin: 0 20px;
+        text-align: center;
+        border-radius: 5px;
+
+        & a {
+          text-decoration: none;
+          display: block;
+          padding-block: 10px;
+          color: g.$grayColor-1;
+        }
+      }
+    }
+  }
+
+  &__info {
+    text-align: center;
+    margin-top: 90px;
+
+    @include u.breakpoint-up(medium) {
+      position: absolute;
+      top: 50%; 
+      transform: translateY(-50%);
+      text-align: left;
+    }
+  }
+
+  &__title {
+    color: g.$white;
+  }
+}
+

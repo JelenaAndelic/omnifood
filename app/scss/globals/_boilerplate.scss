@@ -1,0 +1,123 @@
+@use "./fonts";
+@use "./colors";
+@use "../util" as u;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: fonts.$font-s;
+  line-height: 1.2;
+  color: colors.$grayColor-1;
+
+  &.noscroll {
+    @include u.breakpoint-down(medium) {
+      overflow: hidden;
+    }
+  }
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: fonts.$font-xl;
+  margin-bottom: 35px;
+  @include u.breakpoint-up(large) {
+    font-size: fonts.$font-xxl;
+  }
+}
+
+h2 {
+  font-size: fonts.$font-l;
+  margin-bottom: 35px;
+  @include u.breakpoint-up(large) {
+    font-size: fonts.$font-xl;
+    margin-bottom: 50px;
+  }
+}
+
+h3 {
+  font-size: fonts.$font-m;
+  margin-bottom: 10px;
+
+  @include u.breakpoint-up(large) {
+    font-size: fonts.$font-l;
+    margin-bottom: 15px;
+  }
+}
+
+p {
+  font-size: fonts.$font-xs;
+
+  @include u.breakpoint-up(medium) {
+    font-size: fonts.$font-s;
+  }
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.hide-for-mobile {
+  @include u.breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include u.breakpoint-up(medium) {
+    display: none;
+  }
+}
+
+.btn {
+  display: block;
+  width: 52%;
+  margin: 0 auto;
+  padding: 8px 25px;
+  text-decoration: none;
+  border: none;
+  border-radius: 25px;
+  @include u.breakpoint-up(medium) {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+.btn-fill {
+  background: colors.$primaryOrange;
+  color: colors.$white;
+  border: 1px solid colors.$primaryOrange;
+  margin-bottom: 20px;
+  @include u.breakpoint-up(medium) {
+    margin-right: 15px;
+  }
+}
+
+.btn-empty {
+  color: colors.$primaryOrange;
+  border: 1px solid colors.$primaryOrange;
+}
+
+.p-x {
+  padding-inline: 25px;
+}
+
+.p-y {
+  padding-block: 60px;
+
+  @include u.breakpoint-up(medium) {
+    padding-block: 100px;
+  }
+}
