@@ -1,0 +1,57 @@
+@use "../globals" as g;
+@use "../util" as u;
+
+.footer {
+  background: g.$grayColor-1;
+  color: g.$grayColor-3;
+
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__links {
+
+    margin-top: 40px;
+
+    & a {
+      text-decoration: none;
+      color: g.$grayColor-3;
+      margin-right: 15px;
+      font-size: g.$font-xs;
+
+      @include u.breakpoint-up(medium) {
+        &:hover {
+          color: g.$white;
+        }
+      }
+    }
+  }
+
+  &__social {
+    font-size: g.$font-l;
+  }
+
+  &__copyrights {
+    text-align: center;
+    padding: 25px 0 40px;
+    font-size: g.$font-xs;
+  }
+}
+
+.facebook:hover {
+  color: g.$fbColor;
+}
+
+.twitter:hover {
+  color: g.$twitterColor;
+}
+
+.google:hover {
+  color: g.$googleColor;
+}
+
+.instagram:hover {
+  color: g.$instagramColor;
+}
