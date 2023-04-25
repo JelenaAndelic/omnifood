@@ -1,0 +1,77 @@
+@use "../globals" as g;
+@use "../util" as u;
+
+.contact {
+
+  &__title {
+    text-align: center;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 12.5%;
+      height: 3px;
+      background: g.$primaryOrange;
+      margin: 24px auto;
+    }
+  }
+
+  &__form {
+    width: 60%;
+    margin: 0 auto;
+
+    & div {
+      display: flex;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    & div:last-child {
+      margin-bottom: 0;
+    }
+
+    & label {
+      flex: 30%;
+    }
+
+    & input[type=text],
+    & input[type=email],
+    & select,
+    & textarea {
+      flex: 70%;
+      padding: 12px;
+      outline: 0;
+      border: 1px solid g.$grayColor-3;
+      border-radius: 5px;
+    }
+
+    & select {
+      font-family: "Lato",
+        "Arial",
+        sans-serif;
+      font-size: g.$font-xs;
+      color: g.$grayColor-2;
+    }
+
+    & input::placeholder,
+    & textarea::placeholder {
+      font-family: "Lato",
+        "Arial",
+        sans-serif;
+      font-size: g.$font-xs;
+    }
+  }
+
+  &__submit {
+    text-align: center;
+
+    & a {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn {
+    margin: 20px auto 0;
+  }
+}
