@@ -1,0 +1,71 @@
+@use "../globals" as g;
+@use "../util" as u;
+
+.pricing {
+  background: g.$grayColor-4;
+
+  &__title {
+    text-align: center;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 12.5%;
+      height: 3px;
+      background: g.$primaryOrange;
+      margin: 24px auto;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 65px;
+
+    @include u.breakpoint-up(large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__plan {
+    background: g.$white;
+    border-radius: 8px;
+
+    & p {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    & div:nth-child(1) {
+      background: g.$grayColor-5;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      padding: 20px;
+      border-bottom: 1px solid g.$grayColor-3;
+    }
+
+    & div:nth-child(2) {
+      padding: 20px;
+      border-bottom: 1px solid g.$grayColor-4;
+      line-height: 1.8;
+    }
+
+    & div:nth-child(3) {
+      padding: 20px;
+      text-align: center;
+
+      & a {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.price {
+  color: g.$primaryOrange;
+
+  & span {
+    font-size: g.$font-price;
+    font-weight: 200;
+  }
+}

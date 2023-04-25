@@ -92,6 +92,10 @@ p {
   @include u.breakpoint-up(medium) {
     display: inline-block;
     width: auto;
+
+    &:hover {
+      background: colors.$secondaryOrange;
+    }
   }
 }
 
@@ -108,6 +112,12 @@ p {
 .btn-empty {
   color: colors.$primaryOrange;
   border: 1px solid colors.$primaryOrange;
+
+  @include u.breakpoint-up(medium) {
+    &:hover {
+      color: colors.$white;
+    }
+  }
 }
 
 .p-x {

@@ -76,6 +76,11 @@
       text-transform: uppercase;
       color: g.$white;
       margin-right: 30px;
+      padding-bottom: 10px;
+
+      &:hover {
+        border-bottom: 2px solid g.$secondaryOrange;
+      }
     }
 
     & a:last-child {
