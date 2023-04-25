@@ -20,10 +20,19 @@
     width: 60%;
     margin: 0 auto;
 
+    @include u.breakpoint-down(medium) {
+      width: 100%;
+    }
+
     & div {
       display: flex;
       margin-bottom: 20px;
       align-items: center;
+
+      @include u.breakpoint-down(medium) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     & div:last-child {
@@ -32,6 +41,10 @@
 
     & label {
       flex: 30%;
+
+      @include u.breakpoint-down(medium) {
+        padding-bottom: 10px;
+      }
     }
 
     & input[type=text],
@@ -43,6 +56,18 @@
       outline: 0;
       border: 1px solid g.$grayColor-3;
       border-radius: 5px;
+
+      @include u.breakpoint-down(medium) {
+        display: block;
+        width: 100%;
+        padding: 10px;
+      }
+    }
+
+    & input[type=checkbox] {
+      @include u.breakpoint-down(medium) {
+        margin-left: 20px;
+      }
     }
 
     & select {
@@ -60,6 +85,12 @@
         sans-serif;
       font-size: g.$font-xs;
     }
+
+    .checkbox {
+      @include u.breakpoint-down(medium) {
+        display: block;
+      }
+    }
   }
 
   &__submit {
@@ -73,5 +104,10 @@
 
   &__btn {
     margin: 20px auto 0;
+
+    @include u.breakpoint-down(medium) {
+      width: auto;
+    }
   }
 }
+

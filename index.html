@@ -25,30 +25,30 @@
             <span></span>
             <span></span>
           </a>
-          <ul class="header__menu hide-for-desktop">
-            <a href="#">Food delivery</a>
-            <a href="#">How it works</a>
-            <a href="#">Our cities</a>
-            <a href="#">Sign up</a>
+          <ul class="header__menu hide-for-desktop links">
+            <a href="#foodDelivery">Food delivery</a>
+            <a href="#howItWorks">How it works</a>
+            <a href="#ourCities">Our cities</a>
+            <a href="#signUp">Sign up</a>
           </ul>
-          <ul class="header__links hide-for-mobile">
-            <a href="#">Food delivery</a>
-            <a href="#">How it works</a>
-            <a href="#">Our cities</a>
-            <a href="#">Sign up</a>
+          <ul class="header__links hide-for-mobile links">
+            <a href="#foodDelivery">Food delivery</a>
+            <a href="#howItWorks">How it works</a>
+            <a href="#ourCities">Our cities</a>
+            <a href="#signUp">Sign up</a>
           </ul> 
         </nav>
       </div>
       <div class="container p-x">
         <div class="header__info">
           <h1 class="header__title">Goodbye junk food.<br>Hello super healthy meals.</h1>
-          <a href="#" class="btn btn-fill">I’m hungry</a>
-          <a href="#" class="btn btn-empty">Show me more</a>
+          <a href="#signUp" class="btn btn-fill">I’m hungry</a>
+          <a href="#foodDelivery" class="btn btn-empty">Show me more</a>
         </div>
       </div>
     </header>
 
-    <section class="feature">
+    <section class="feature" id="foodDelivery">
       <div class="container p-x p-y">
         <div class="feature__info">
           <h2 class="feature__title">Get food fast — not fast food</h2>
@@ -118,7 +118,7 @@
       </div>
     </section>
 
-    <section class="guide">
+    <section class="guide" id="howItWorks">
       <div class="container p-x p-y">
         <h2 class="guide__title">How it works - Simple as 1, 2, 3</h2>
         <div class="guide__info">
@@ -143,7 +143,7 @@
       </div>
     </section>
 
-    <section class="cities">
+    <section class="cities" id="ourCities">
       <div class="container p-x p-y">
         <h2 class="cities__title">We're currently in these cities</h2>
         <div class="cities__grid">
@@ -318,7 +318,7 @@
               <option value="other">Other</option>
             </select>
           </div>
-          <div>
+          <div class="checkbox">
             <label for="newsletter">Newsletter?</label>
             <input type="checkbox" id="newsletter" name="newsletter" checked>
             <span>Yes, please</span>
@@ -328,7 +328,7 @@
             <textarea name="text" id="text" placeholder="Your message"></textarea>
           </div>
           <div>
-            <a href="#" class="btn btn-fill contact__btn">Send it!</a>
+            <button type="submit" class="btn btn-fill contact__btn">Send it!</button>
           </div>
         </form>
       </div>
@@ -337,7 +337,7 @@
     <footer class="footer">
       <div class="container p-x">
         <div class="footer__info">
-          <ul class="footer__links">
+          <ul class="footer__links footer__nav">
             <a href="#">About us</a>
             <a href="#">Blog</a>
             <a href="#">Press</a>
